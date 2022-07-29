@@ -65,6 +65,10 @@ end)
         loadstring(game:HttpGet(('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'),true))()
     end)
 
+    MainSection:NewButton("Infinite Yield", "FE Admin Commands", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Cesare0328/my-scripts/main/MCARCH2.lua", true))()
+    end)
+
 
     --LOCAL PLAYER
     local Player = Window:NewTab("Player")
@@ -97,24 +101,3 @@ end)
 
         Fly(true)
     end)
-
-    OtherSection:NewKeybind("KeybindText", "KeybindInfo", Enum.KeyCode.E, function()
-        Library:ToggleUI()
-    end)
-
-    --put this in starterplayerscripts or startergui
-
-game:GetService("StarterGui"):SetCore("SendNotification", {
-	Title = "Gaz Services"; --must be string
-	Text = "Launched"; --must be string
-	Icon = "http://www.roblox.com/asset/?id=4485364506"; --optional
-	Duration = 5; -- defaults to 5 secs if no duration is set
-	
-})
-
-local block = Instance.new("Sound") -- creates the block
-
-block.Parent = workspace -- blocks parent
-block.Playing = true -- if anchored is false gravity is applied if its true it will just float in air or where ever the part of
-block.SoundId = 'rbxassetid://7226350918'  -- change to any position in the map
--- change to any color
