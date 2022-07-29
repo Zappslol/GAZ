@@ -9,6 +9,47 @@ local Window = Library.CreateLib("Gaz! Services", "Ocean")
         loadstring(game:HttpGet("https://gist.githubusercontent.com/DagerFild/b4776075a0d26ef04394133ee6bd2081/raw/0ed51ac94057d2d9a9f00e1b037b9011c76ca54a/tpGUI", true))()
     end)
 
+    MainSection:NewButton("Teleport 2", "Be able to teleport to anyone in the server", function()
+         -- v3rmillion post:
+ -- https://v3rmillion.net/showthread.php?tid=542892
+
+-- Note that this was not made by me.
+
+
+-- Objects
+
+local ScreenGui = Instance.new("ScreenGui")
+local TextBox = Instance.new("TextBox")
+
+-- Properties
+
+ScreenGui.Parent = game.CoreGui
+
+TextBox.Parent = ScreenGui
+TextBox.BackgroundColor3 = Color3.new(0.333333, 0.333333, 0.333333)
+TextBox.Position = UDim2.new(0, 0, 1, -25)
+TextBox.Size = UDim2.new(0, 150, 0, 25)
+TextBox.Font = Enum.Font.SourceSans
+TextBox.Text = "Insert Player Name"
+TextBox.TextColor3 = Color3.new(1, 1, 1)
+TextBox.TextScaled = true
+TextBox.TextSize = 14
+TextBox.TextWrapped = true
+
+-- Scripts
+
+
+
+game:GetService("UserInputService").InputBegan:connect(function(key)
+if key.KeyCode == Enum.KeyCode.E then --Replace E with the key you would like to be pressed
+local ooooooof = TextBox.Text
+local plr1 = game.Players.LocalPlayer.Character
+local plr2 = game.Workspace:FindFirstChild(ooooooof)
+plr1.HumanoidRootPart.CFrame = plr2.HumanoidRootPart.CFrame * CFrame.new(0,2,0)
+end
+end)
+    end)
+
 
     MainSection:NewToggle("Super-Human", "go fast and jump high", function(state)
         if state then
