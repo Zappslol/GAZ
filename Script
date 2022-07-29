@@ -65,7 +65,7 @@ end)
         loadstring(game:HttpGet(('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'),true))()
     end)
 
-    MainSection:NewButton("Infinite Yield", "FE Admin Commands", function()
+    MainSection:NewButton("Mad City", "FE Admin Commands", function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/Cesare0328/my-scripts/main/MCARCH2.lua", true))()
     end)
 
