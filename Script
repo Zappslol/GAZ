@@ -101,3 +101,7 @@ end)
 
         Fly(true)
     end)
+
+    Section:NewKeybind("Open/Close Gui", "KeybindInfo", Enum.KeyCode.F, function()
+        Library:ToggleUI()
+    end)
