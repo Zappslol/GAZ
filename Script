@@ -97,3 +97,15 @@ end)
 
         Fly(true)
     end)
+
+    OtherSection:NewKeybind("KeybindText", "KeybindInfo", Enum.KeyCode.E, function()
+        Library:ToggleUI()
+    end)
+
+    game:GetService("StarterGui"):SetCore("SendNotification", {
+        Title = "Gaz Services"; --must be string
+        Text = "Launched"; --must be string
+        Icon = ""; --optional
+        Duration = 5; -- defaults to 5 secs if no duration is set
+        
+    })
