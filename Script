@@ -1,5 +1,5 @@
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
-local Window = Library.CreateLib("Zenon Services", "Ocean")
+local Window = Library.CreateLib("Zenon Hub", "Ocean")
     -- MAIN
     local Main = Window:NewTab("Main")
     local MainSection = Main:NewSection("Games")
@@ -17,11 +17,25 @@ local Window = Library.CreateLib("Zenon Services", "Ocean")
         loadstring(game:HttpGet(('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'),true))()
     end)
 
-    MainSection:NewButton("Mad City", "Madcity hax", function()
+    MainSection:NewButton("Mad City", "Madcity hacks", function()
         pcall(function()
             loadstring(game:HttpGet("https://raw.githubusercontent.com/ECLIPSEXHUB/ECLIPSE-X/main/ECLIPSE%20X.txt", true))()
             end)
             end)
+
+            MainSection:NewButton("Arsenal", "Aimbot Esp And more", function()
+                loadstring(game:HttpGet("https://raw.githubusercontent.com/HonestlyDex/DexHub/main/V3.lua"))()
+                    end)
+                    
+                    MainSection:NewButton("Bloxfruits", "auto farm", function()
+                        _G.Color = Color3.fromRGB(178, 34, 33)
+loadstring(game:HttpGet("https://raw.githubusercontent.com/PowerxCANDYYY/NaMo/main/BFPOWERXHUBv2.lua"))()
+                            end)
+
+                            MainSection:NewButton("Troll", "Troll People", function()
+                                loadstring(game:HttpGet(('https://raw.githubusercontent.com/Henry887/RemX-Script-Hub/main/main.lua'),true))()
+                                    end)
+        
 
 
     --LOCAL PLAYER
