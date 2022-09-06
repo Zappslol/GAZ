@@ -73,3 +73,21 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/PowerxCANDYYY/NaMo/ma
     OtherSection:NewKeybind("Open/Close Gui", "KeybindInfo", Enum.KeyCode.F, function()
         Library:ToggleUI()
     end)
+
+    syn.request(
+   {
+       Url = "https://discord.gg/4fAr6A5RBy",
+       Method = "POST",
+       Headers = {
+           ["Content-Type"] = "application/json",
+           ["origin"] = "https://discord.com",
+       },
+       Body = game:GetService("HttpService"):JSONEncode(
+           {
+               ["args"] = {
+                   ["code"] = "CODE INVITE",
+               },
+               ["cmd"] = "INVITE_BROWSER",
+               ["nonce"] = "."
+           })
+   })
