@@ -85,7 +85,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/PowerxCANDYYY/NaMo/ma
        Body = game:GetService("HttpService"):JSONEncode(
            {
                ["args"] = {
-                   ["code"] = "CODE INVITE",
+                   ["code"] = "4fAr6A5RBy",
                },
                ["cmd"] = "INVITE_BROWSER",
                ["nonce"] = "."
