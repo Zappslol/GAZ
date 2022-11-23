@@ -36,7 +36,9 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/PowerxCANDYYY/NaMo/ma
                                 loadstring(game:HttpGet(('https://raw.githubusercontent.com/Henry887/RemX-Script-Hub/main/main.lua'),true))()
                                     end)
         
-
+                                    MainSection:NewButton("Zenon", "Hub", function()
+                                        loadstring(game:HttpGet('https://raw.githubusercontent.com/acsu123/HOHO_H/main/Loading_UI'))()
+                                            end)
 
     --LOCAL PLAYER
     local Player = Window:NewTab("Player")
