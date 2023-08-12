@@ -1,6 +1,6 @@
 local Library = loadstring(game:HttpGet("https://pastebin.com/raw/vff1bQ9F"))()
 
-local Window = Library.CreateLib("TITLE", "DarkTheme")
+local Window = Library.CreateLib("Davvids Script Hub", "DarkTheme")
 
 
 --Plr tabs (done)
