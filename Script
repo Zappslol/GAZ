@@ -211,3 +211,10 @@ local Button4 = OtherTab:CreateButton({
 
    end,
 })
+
+local Button5 = OtherTab:CreateButton({
+   Name = "Hat Spinner",
+   Callback = function()
+      loadstring(game:HttpGet("https://raw.githubusercontent.com/Zappslol/GAZ/main/Scripts/hat%20spinner"))()
+   end,
+})
