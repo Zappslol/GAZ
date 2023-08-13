@@ -46,18 +46,22 @@ local Window = Rayfield:CreateWindow({
 
  local Section = Tab:CreateSection("FE Scripts")
 
+ local Label = Tab:CreateLabel("If hats/hair required will copy to clip board")
+
  local Button = Tab:CreateButton({
     Name = "Laser Arm",
     Callback = function()
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/rouxhaver/scripts-2/main/FE%20Laser%20Arm.Lua"))()
-        toclipboard("https://raw.githubusercontent.com/Zappslol/GAZ/main/required/laser%20arm")
+        pcall(function()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/rouxhaver/scripts-2/main/FE%20Laser%20Arm.Lua"))()
+            setclipboard("https://raw.githubusercontent.com/Zappslol/GAZ/main/required/laser%20arm")
+        end,warn)
     end,
  })
 
  local Button2 = Tab:CreateButton({
     Name = "Spiderman Script",
     Callback = function()
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/Zappslol/GAZ/main/Scripts/fespiderman"))()
+         loadstring(game:HttpGet("https://raw.githubusercontent.com/Zappslol/GAZ/main/Scripts/fespiderman"))()
     end,
  })
 
@@ -67,3 +71,135 @@ local Window = Rayfield:CreateWindow({
         loadstring(game:HttpGet("https://raw.githubusercontent.com/Zappslol/GAZ/main/Scripts/febang"))()
     end,
  })
+
+ local Button4 = Tab:CreateButton({
+   Name = "Split R15",
+   Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Zappslol/GAZ/main/Scripts/split%20r15"))()
+   end,
+})
+
+local Button5 = Tab:CreateButton({
+   Name = "FE HUB",
+   Callback = function()
+      loadstring(game:HttpGet('https://raw.githubusercontent.com/Dvrknvss/UniversalFEScriptHub/main/Script'))()
+   end,
+})
+
+local Button6 = Tab:CreateButton({
+   Name = "Animation/Music Player r15",
+   Callback = function()
+      pcall(function()
+         loadstring(game:HttpGet("https://gitlab.com/Tsuniox/lua-stuff/-/raw/master/R15GUI.lua"))()
+      setclipboard("https://raw.githubusercontent.com/Zappslol/GAZ/main/required/animation%20id")
+   end,warn)
+   end,
+})
+
+local Button = Tab:CreateButton({
+   Name = "Shadows Script Hub V2",
+   Callback = function()
+   loadstring(game:HttpGet("https://gist.githubusercontent.com/dark-modz/a89a5d629d598fc198d1106fe6701685/raw/646a9cefa844cccd3c760715f59d25fe63b4a06b/shadowhub-NekoAndMore"))()
+   end,
+})
+
+--------------
+
+local PlayerTab = Window:CreateTab("PLAYER", 4483362458) -- Title, Image
+
+local PlayerSection = PlayerTab:CreateSection("PLAYER SCRIPTS")
+
+local Slider1 = PlayerTab:CreateSlider({
+   Name = "FOV",
+   Range = {70, 150},
+   Increment = 1,
+   Suffix = "Fov",
+   CurrentValue = 70,
+   Flag = "Fov", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Callback = function(Value)
+      local FovNumber = Value 
+      local Camera = workspace.CurrentCamera
+      Camera.FieldOfView = FovNumber
+   end,
+})
+
+local Slider2 = PlayerTab:CreateSlider({
+   Name = "Speed",
+   Range = {16, 500},
+   Increment = 1,
+   Suffix = "Speed",
+   CurrentValue = 10,
+   Flag = "Speed", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Callback = function(Value)
+      game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value
+   end,
+})
+
+local Slider3 = PlayerTab:CreateSlider({
+   Name = "Jump Power",
+   Range = {50, 1000},
+   Increment = 1,
+   Suffix = "Jump Power",
+   CurrentValue = 50,
+   Flag = "Jump", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Callback = function(Value)
+      game.Players.LocalPlayer.Character.Humanoid.JumpPower = Value
+   end,
+})
+
+local Button = PlayerTab:CreateButton({
+   Name = "Reset JP/SP",
+   Callback = function()
+      game.Players.LocalPlayer.Character.Humanoid.JumpPower = 50
+        game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 16
+   end,
+})
+
+local Button2 = PlayerTab:CreateButton({
+   Name = "Inf Cam Zoom",
+   Callback = function()
+      game:GetService("Players").LocalPlayer.CameraMaxZoomDistance = math.huge
+   end,
+})
+
+local Button3 = PlayerTab:CreateButton({
+   Name = "Reset",
+   Callback = function()
+      game.Players.LocalPlayer.Character.Head:Destroy()
+      if game.Players.LocalPlayer.Character.Humanoid.Health < 5 then 
+          local deathmanok = game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart").position
+          wait(1.5)
+          game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(deathmanok)
+      end
+   end,
+})
+
+local OtherTab = Window:CreateTab("OTHER", 4483362458) -- Title, Image
+
+local OtherSection = OtherTab:CreateSection("OTHER SCRIPTS")
+
+local Button = OtherTab:CreateButton({
+   Name = "Bypasser",
+   Callback = function()
+      loadstring(game:HttpGet("https://raw.githubusercontent.com/synnyyy/synergy/additional/betterbypasser", true))({
+         Method = 1, -- Method 1 is the main method. Method two is emojis. Method 3 is full transparency, no special symbols. Method 3 has been improved!
+         Keybind = "F", -- Usually defaulted to F. You can change this keybind by replacing the string with a letter. Works for uppercase and lowercase.
+         ShowMethodDictionary = true -- Shows you the full list of words that you can say with the method. Press FN + F9 to see this dictionary.
+     })
+   end,
+})
+
+local Button2 = OtherTab:CreateButton({
+   Name = "Infinite Yield",
+   Callback = function()
+      loadstring(game:HttpGet("https://cdn.wearedevs.net/scripts/Infinite%20Yield.txt"))()
+   end,
+})
+
+
+local Button3 = OtherTab:CreateButton({
+   Name = "Nameless Admin",
+   Callback = function()
+      loadstring(game:HttpGet("https://raw.githubusercontent.com/FilteringEnabled/NamelessAdmin/main/Source"))();
+   end,
+})
