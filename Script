@@ -1,64 +1,69 @@
-local Library = loadstring(game:HttpGet("https://pastebin.com/raw/vff1bQ9F"))()
+getgenv().SecureMode = true
+local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
-local Window = Library.CreateLib("Davvids Script Hub", "DarkTheme")
+local Window = Rayfield:CreateWindow({
+    Name = "Davvids Trolling Ui",
+    LoadingTitle = "Loading Ui",
+    LoadingSubtitle = "by Davvid",
+    ConfigurationSaving = {
+       Enabled = true,
+       FolderName = nil, -- Create a custom folder for your hub/game
+       FileName = "davvids ui"
+    },
+    Discord = {
+       Enabled = false,
+       Invite = "noinvitelink", -- The Discord invite code, do not include discord.gg/. E.g. discord.gg/ABCD would be ABCD
+       RememberJoins = true -- Set this to false to make them join the discord every time they load it up
+    },
+    KeySystem = true, -- Set this to true to use our key system
+    KeySettings = {
+       Title = "Key System",
+       Subtitle = "Key System",
+       Note = "No method of obtaining the key is provided",
+       FileName = "Key", -- It is recommended to use something unique as other scripts using Rayfield may overwrite your key file
+       SaveKey = true, -- The user's key will be saved, but if you change the key, they will be unable to use your script
+       GrabKeyFromSite = false, -- If this is true, set Key below to the RAW site you would like Rayfield to get the key from
+       Key = {"davvidontop!"} -- List of keys that will be accepted by the system, can be RAW file links (pastebin, github etc) or simple strings ("hello","key22")
+    }
+ })
 
+ Rayfield:Notify({
+    Title = "Booted",
+    Content = "Booted Davvids Trolling Ui",
+    Duration = 5,
+    Image = 4483362458,
+    Actions = { -- Notification Buttons
+       Ignore = {
+          Name = "Okay!",
+          Callback = function()
+          print("Booted!")
+       end
+    },
+ },
+ })
 
---Plr tabs (done)
-local PlrTab = Window:NewTab("Da Hood")
-local PlrSection = PlrTab:NewSection("DH SCRIPTS")
+ local Tab = Window:CreateTab("FE SCRIPTS", 4483362458) -- Title, Image
 
-PlrSection:NewButton("SwagMode", "SwagMode Script", function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/lerkermer/lua-projects/master/SwagModeV002"))()
-end)
+ local Section = Tab:CreateSection("FE Scripts")
 
-PlrSection:NewButton("Faded", "Faded Script", function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/NighterEpic/FadedLock/main/YesEpic"))()
-end)
+ local Button = Tab:CreateButton({
+    Name = "Laser Arm",
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/rouxhaver/scripts-2/main/FE%20Laser%20Arm.Lua"))()
+        toclipboard("https://raw.githubusercontent.com/Zappslol/GAZ/main/required/laser%20arm")
+    end,
+ })
 
-PlrSection:NewButton("Crostide's Selling GUI", "Selling GUI", function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/Crostide/cdhc/main/gui"))()
-end)
+ local Button2 = Tab:CreateButton({
+    Name = "Spiderman Script",
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Zappslol/GAZ/main/Scripts/fespiderman"))()
+    end,
+ })
 
-PlrSection:NewButton("NukerHub", "Mobile Scripts", function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/Allvideo/test/main/Whitelist.txt"))()
-end)
-
--- Player
-
-local Player = Window:NewTab("Player")
-    local PlayerSection = Player:NewSection("Player")
-
-    PlayerSection:NewSlider("Walkspeed", "SPEED!!", 500, 16, function(s)
-        game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
-    end)
-
-    PlayerSection:NewSlider("Jumppower", "JUMP HIGH!!", 350, 50, function(s)
-        game.Players.LocalPlayer.Character.Humanoid.JumpPower = s
-    end)
-
-    PlayerSection:NewButton("Reset WS/JP", "Resets to all defaults", function()
-        game.Players.LocalPlayer.Character.Humanoid.JumpPower = 50
-        game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 16
-    end)
-
-
--- Others
-local OthersTab = Window:NewTab("Others")
-local OthersSection = OthersTab:NewSection("Scripts")
-
-OthersSection:NewButton("Infinite yield", "ButtonInfo", function()
-    loadstring(game:HttpGet("https://cdn.wearedevs.net/scripts/Infinite%20Yield.txt"))()
-end)
-
-OthersSection:NewButton("Bypasser", "Check Console for words", function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/synnyyy/synergy/additional/betterbypasser", true))({
-        Method = 1, -- Method 1 is the main method. Method two is emojis. Method 3 is full transparency, no special symbols. Method 3 has been improved!
-        Keybind = "F", -- Usually defaulted to F. You can change this keybind by replacing the string with a letter. Works for uppercase and lowercase.
-        ShowMethodDictionary = true -- Shows you the full list of words that you can say with the method. Press FN + F9 to see this dictionary.
-    })
-end)
-
-
-OthersSection:NewKeybind("UI Keybind", "UI Keybind", Enum.KeyCode.V, function()
-	Library:ToggleUI()
-end)
+ local Button3 = Tab:CreateButton({
+    Name = "Bang Script",
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Zappslol/GAZ/main/Scripts/febang"))()
+    end,
+ })
