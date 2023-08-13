@@ -204,7 +204,7 @@ local Button3 = OtherTab:CreateButton({
    end,
 })
 
-local Button4 = Other:CreateButton({
+local Button4 = OtherTab:CreateButton({
    Name = "Chat Spoofer",
    Callback = function()
       loadstring(game:HttpGet("https://raw.githubusercontent.com/game-hax/uca/main/release/uca.min.lua"))()
