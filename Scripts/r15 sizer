@@ -1,0 +1,324 @@
+-- Im Patrick
+-- Instances:
+local NaturalDisaster = Instance.new("ScreenGui")
+local Frame = Instance.new("Frame")
+local Open = Instance.new("TextButton")
+local main = Instance.new("Frame")
+local Close = Instance.new("TextButton")
+local TextLabel3 = Instance.new("TextLabel")
+local TextLabel2 = Instance.new("TextLabel")
+local TextLabel1 = Instance.new("TextLabel")
+local TextLabel4 = Instance.new("TextLabel")
+local Gravity = Instance.new("TextButton")
+local Map = Instance.new("TextButton")
+local Damage = Instance.new("TextButton")
+local Lobby = Instance.new("TextButton")
+--Properties:
+NaturalDisaster.Name = "Natural Disaster"
+NaturalDisaster.Parent = game.CoreGui
+
+Frame.Parent = NaturalDisaster
+Frame.BackgroundColor3 = Color3.new(1, 1, 1)
+Frame.Position = UDim2.new(0.0101302462, 0, 0.482566237, 0)
+Frame.Size = UDim2.new(0, 103, 0, 36)
+Frame.Style = Enum.FrameStyle.DropShadow
+
+Open.Name = "Open"
+Open.Parent = Frame
+Open.BackgroundColor3 = Color3.new(13, 105, 172)
+Open.BackgroundTransparency = 0.89999997615814
+Open.Position = UDim2.new(0.0485436879, 0, -0.305555552, 0)
+Open.Size = UDim2.new(0, 79, 0, 30)
+Open.Font = Enum.Font.SciFi
+Open.Text = "Size R15"
+Open.TextColor3 = Color3.new(1, 1, 1)
+Open.TextSize = 14
+Open.MouseButton1Down:connect(function()
+main.Visible = true
+Frame.Visible = false
+end)
+
+main.Name = "main"
+main.Parent = NaturalDisaster
+main.BackgroundColor3 = Color3.new(13, 105, 172)
+main.Position = UDim2.new(0.329479754, 0, 0.27573061, 0)
+main.Size = UDim2.new(0, 374, 0, 269)
+main.Style = Enum.FrameStyle.DropShadow
+main.Visible = false
+main.Active = true
+main.Draggable = true
+
+Close.Name = "Close"
+Close.Parent = main
+Close.BackgroundColor3 = Color3.new(0, 0, 0)
+Close.BackgroundTransparency = 0.5
+Close.Position = UDim2.new(0.954666674, 0, -0.0113636367, 0)
+Close.Size = UDim2.new(0, 19, 0, 16)
+Close.Font = Enum.Font.SourceSans
+Close.Text = "X"
+Close.TextColor3 = Color3.new(0.333333, 1, 1)
+Close.TextSize = 14
+Close.MouseButton1Down:connect(function()
+Frame.Visible = true
+main.Visible = false
+end)
+
+TextLabel3.Name = "TextLabel3"
+TextLabel3.Parent = main
+TextLabel3.BackgroundColor3 = Color3.new(0, 0, 0)
+TextLabel3.BackgroundTransparency = 0.89999997615814
+TextLabel3.Position = UDim2.new(0.219038948, 0, 0.852558732, 0)
+TextLabel3.Size = UDim2.new(0, 200, 0, 17)
+TextLabel3.Font = Enum.Font.SourceSans
+TextLabel3.Text = "change height to 105, width 100, head 100, proportions 0"
+TextLabel3.TextColor3 = Color3.new(1, 1, 0)
+TextLabel3.TextSize = 14
+
+TextLabel2.Name = "TextLabel2"
+TextLabel2.Parent = main
+TextLabel2.BackgroundColor3 = Color3.new(0, 0, 0)
+TextLabel2.BackgroundTransparency = 0.89999997615814
+TextLabel2.Position = UDim2.new(0.229946524, 0, 0.651079118, 0)
+TextLabel2.Size = UDim2.new(0, 200, 0, 18)
+TextLabel2.Font = Enum.Font.SourceSans
+TextLabel2.Text = ""
+TextLabel2.TextColor3 = Color3.new(1, 1, 0)
+TextLabel2.TextSize = 14
+
+TextLabel1.Name = "TextLabel1"
+TextLabel1.Parent = main
+TextLabel1.BackgroundColor3 = Color3.new(0, 0, 0)
+TextLabel1.BackgroundTransparency = 0.89999997615814
+TextLabel1.Position = UDim2.new(0.219060361, 0, 0.755531549, 0)
+TextLabel1.Size = UDim2.new(0, 200, 0, 17)
+TextLabel1.Font = Enum.Font.SourceSans
+TextLabel1.Text = ""
+TextLabel1.TextColor3 = Color3.new(1, 1, 0)
+TextLabel1.TextSize = 14
+
+TextLabel4.Name = "TextLabel4"
+TextLabel4.Parent = main
+TextLabel4.BackgroundColor3 = Color3.new(0, 0, 0)
+TextLabel4.BackgroundTransparency = 0.80000001192093
+TextLabel4.Position = UDim2.new(-0.00810807757, 0, -0.0105236284, 0)
+TextLabel4.Size = UDim2.new(0, 365, 0, 20)
+TextLabel4.Font = Enum.Font.SourceSans
+TextLabel4.Text = "size Gui R15"
+TextLabel4.TextColor3 = Color3.new(0, 1, 0)
+TextLabel4.TextSize = 14
+
+Gravity.Name = "Gravity"
+Gravity.Parent = main
+Gravity.BackgroundColor3 = Color3.new(0, 0, 0)
+Gravity.BackgroundTransparency = 0.5
+Gravity.Position = UDim2.new(-0.00323019363, 0, 0.41813767, 0)
+Gravity.Size = UDim2.new(0, 170, 0, 47)
+Gravity.Font = Enum.Font.SourceSans
+Gravity.Text = "Size 1+"
+Gravity.TextColor3 = Color3.new(0, 1, 1)
+Gravity.TextSize = 14
+Gravity.MouseButton1Down:connect(function()
+local LocalPlayer = game:GetService("Players").LocalPlayer
+local Character = LocalPlayer.Character
+local Humanoid = Character:FindFirstChildOfClass("Humanoid")
+
+function rm()
+	for i,v in pairs(Character:GetDescendants()) do
+		if v:IsA("BasePart") then
+			if v.Name == "Handle" or v.Name == "Head" then
+				if Character.Head:FindFirstChild("OriginalSize") then
+					Character.Head.OriginalSize:Destroy()
+				end
+			else
+				for i,cav in pairs(v:GetDescendants()) do
+					if cav:IsA("Attachment") then
+						if cav:FindFirstChild("OriginalPosition") then
+							cav.OriginalPosition:Destroy()  
+						end
+					end
+				end
+				v:FindFirstChild("OriginalSize"):Destroy()
+				if v:FindFirstChild("AvatarPartScaleType") then
+					v:FindFirstChild("AvatarPartScaleType"):Destroy()
+				end
+			end
+		end
+	end
+end
+
+rm()
+wait(0.5)
+Humanoid:FindFirstChild("BodyProportionScale"):Destroy()
+wait(1)
+end)
+
+Map.Name = "Map"
+Map.Parent = main
+Map.BackgroundColor3 = Color3.new(0, 0, 0)
+Map.BackgroundTransparency = 0.5
+Map.Position = UDim2.new(0.53741771, 0, 0.107225701, 0)
+Map.Size = UDim2.new(0, 170, 0, 47)
+Map.Font = Enum.Font.SourceSans
+Map.Text = "Size 2+"
+Map.TextColor3 = Color3.new(0, 1, 1)
+Map.TextSize = 14
+Map.MouseButton1Click:connect(function()
+local LocalPlayer = game:GetService("Players").LocalPlayer
+local Character = LocalPlayer.Character
+local Humanoid = Character:FindFirstChildOfClass("Humanoid")
+
+function rm()
+	for i,v in pairs(Character:GetDescendants()) do
+		if v:IsA("BasePart") then
+			if v.Name == "Handle" or v.Name == "Head" then
+				if Character.Head:FindFirstChild("OriginalSize") then
+					Character.Head.OriginalSize:Destroy()
+				end
+			else
+				for i,cav in pairs(v:GetDescendants()) do
+					if cav:IsA("Attachment") then
+						if cav:FindFirstChild("OriginalPosition") then
+							cav.OriginalPosition:Destroy()  
+						end
+					end
+				end
+				v:FindFirstChild("OriginalSize"):Destroy()
+				if v:FindFirstChild("AvatarPartScaleType") then
+					v:FindFirstChild("AvatarPartScaleType"):Destroy()
+				end
+			end
+		end
+	end
+end
+
+rm()
+wait(0.5)
+Humanoid:FindFirstChild("BodyProportionScale"):Destroy()
+wait(1)
+
+rm()
+wait(0.5)
+Humanoid:FindFirstChild("BodyHeightScale"):Destroy()
+wait(1)
+end)
+
+Damage.Name = "Damage"
+Damage.Parent = main
+Damage.BackgroundColor3 = Color3.new(0, 0, 0)
+Damage.BackgroundTransparency = 0.5
+Damage.Position = UDim2.new(-0.00590397418, 0, 0.107225701, 0)
+Damage.Size = UDim2.new(0, 170, 0, 47)
+Damage.Font = Enum.Font.SourceSans
+Damage.Text = "Size 3+"
+Damage.TextColor3 = Color3.new(0, 1, 1)
+Damage.TextSize = 14
+Damage.MouseButton1Click:connect(function()
+local LocalPlayer = game:GetService("Players").LocalPlayer
+local Character = LocalPlayer.Character
+local Humanoid = Character:FindFirstChildOfClass("Humanoid")
+
+function rm()
+	for i,v in pairs(Character:GetDescendants()) do
+		if v:IsA("BasePart") then
+			if v.Name == "Handle" or v.Name == "Head" then
+				if Character.Head:FindFirstChild("OriginalSize") then
+					Character.Head.OriginalSize:Destroy()
+				end
+			else
+				for i,cav in pairs(v:GetDescendants()) do
+					if cav:IsA("Attachment") then
+						if cav:FindFirstChild("OriginalPosition") then
+							cav.OriginalPosition:Destroy()  
+						end
+					end
+				end
+				v:FindFirstChild("OriginalSize"):Destroy()
+				if v:FindFirstChild("AvatarPartScaleType") then
+					v:FindFirstChild("AvatarPartScaleType"):Destroy()
+				end
+			end
+		end
+	end
+end
+
+rm()
+wait(0.5)
+Humanoid:FindFirstChild("BodyProportionScale"):Destroy()
+wait(1)
+
+rm()
+wait(0.5)
+Humanoid:FindFirstChild("BodyHeightScale"):Destroy()
+wait(1)
+
+rm()
+wait(0.5)
+Humanoid:FindFirstChild("BodyWidthScale"):Destroy()
+wait(1)
+end)
+
+Lobby.Name = "Lobby"
+Lobby.Parent = main
+Lobby.BackgroundColor3 = Color3.new(0, 0, 0)
+Lobby.BackgroundTransparency = 0.5
+Lobby.Position = UDim2.new(0.53741765, 0, 0.41813767, 0)
+Lobby.Size = UDim2.new(0, 170, 0, 47)
+Lobby.Font = Enum.Font.SourceSans
+Lobby.Text = "Size 5+"
+Lobby.TextColor3 = Color3.new(0, 1, 1)
+Lobby.TextSize = 14
+Lobby.MouseButton1Click:connect(function()
+local LocalPlayer = game:GetService("Players").LocalPlayer
+local Character = LocalPlayer.Character
+local Humanoid = Character:FindFirstChildOfClass("Humanoid")
+
+function rm()
+	for i,v in pairs(Character:GetDescendants()) do
+		if v:IsA("BasePart") then
+			if v.Name == "Handle" or v.Name == "Head" then
+				if Character.Head:FindFirstChild("OriginalSize") then
+					Character.Head.OriginalSize:Destroy()
+				end
+			else
+				for i,cav in pairs(v:GetDescendants()) do
+					if cav:IsA("Attachment") then
+						if cav:FindFirstChild("OriginalPosition") then
+							cav.OriginalPosition:Destroy()  
+						end
+					end
+				end
+				v:FindFirstChild("OriginalSize"):Destroy()
+				if v:FindFirstChild("AvatarPartScaleType") then
+					v:FindFirstChild("AvatarPartScaleType"):Destroy()
+				end
+			end
+		end
+	end
+end
+
+rm()
+wait(0.5)
+Humanoid:FindFirstChild("BodyProportionScale"):Destroy()
+wait(1)
+
+rm()
+wait(0.5)
+Humanoid:FindFirstChild("BodyHeightScale"):Destroy()
+wait(1)
+
+rm()
+wait(0.5)
+Humanoid:FindFirstChild("BodyWidthScale"):Destroy()
+wait(1)
+
+rm()
+wait(0.5)
+Humanoid:FindFirstChild("BodyDepthScale"):Destroy()
+wait(1)
+
+rm()
+wait(0.5)
+Humanoid:FindFirstChild("HeadScale"):Destroy()
+wait(1)
+end)
+-- Scripts:
